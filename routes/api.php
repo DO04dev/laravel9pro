@@ -25,3 +25,7 @@ Route::get('/users/{name?}', function($name = null){
 Route::get('/products/{id?}', function($id = null){
     return 'Product id is ' . $id;
 });
+
+Route::match(['get', 'post'], '/students', function(Request $req){
+    return 'Request method is '. $req->method();
+});
